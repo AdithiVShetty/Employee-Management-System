@@ -1,4 +1,5 @@
-﻿using EmployeeDetails;
+﻿using Configuration;
+using EmployeeDetails;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,8 +9,9 @@ namespace EmployeeRecord
 {
     class EmployeeDB
     {
-        private List<Employee> employees = new List<Employee>();
-        private const string filePath = "employeeDetails.txt";
+        List<Employee> employees = new List<Employee>();
+
+        string filePath = AppConfig.FileName();
         public static void Main(string[] args)
         {
             EmployeeDB employeeRecord = new EmployeeDB();
